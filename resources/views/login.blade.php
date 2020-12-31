@@ -72,7 +72,7 @@
                              <button type="submit" class="btn btn-lg btn-block btn-outline-dark mt-3"> {{ __('Login') }}</button>
                           </div>
 						  <div class="col-md-8">
-                             <a href="" class="btn btn-link float-right mt-3"> {{ __('Enquire Here') }}</a>
+                             <a href="{{url('/enquiry')}}" class="btn btn-link float-right mt-3"> {{ __('Enquire Here') }}</a>
                           </div>
                        </div>
 					   

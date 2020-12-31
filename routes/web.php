@@ -5,6 +5,7 @@ use App\Http\Controllers\Registrationcontroller;
 use App\Http\Controllers\Subregistcontroller;
 use App\Http\Controllers\ScheduleTaskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\InvoiceController;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,11 @@ Route::get('/front', function () {
     return view('login');
 })->name('front');
 
+Route::get('/enquiry',function(){
+    return view('enquiry');
+});
 
+Route::post('submit_enquiry',[EnquiryController::class,'enquiry']);
 
 
 Route::get('/homepage', function () {
