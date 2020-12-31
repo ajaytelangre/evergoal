@@ -1,0 +1,172 @@
+body{
+    position: relative;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 50%;
+        height: 100%;
+    }
+
+    .navbar-collapse.collapsing {
+        left: -75%;
+        transition: height 0s ease;
+    }
+
+    .navbar-collapse.show {
+        left: 0;
+        transition: left 300ms ease-in-out;
+    }
+
+    .navbar-toggler.collapsed ~ .navbar-collapse {
+        transition: left 500ms ease-in-out;
+    }
+
+   
+}
+
+@media(min-width: 992px)
+{
+    .youtube{
+        height: 250px;
+    }
+
+    #user_name {
+      
+        /* visibility: hidden; */
+        display: none;
+    }
+}
+
+/* END NAVBAR */
+
+
+.allbtn{
+    background-color: #00284d;
+    color:white;
+}
+/* START lOGIN PAGE */
+.loginpage{
+
+
+}
+.loginpage .input-group-text{
+background-color: #00284d;
+
+}
+.loginpage .fa-unlock-alt, .fa-user{
+color: #ffffff;
+
+}
+.loginpage h2{
+    font-family: Open sans,sans-serif;
+    color:#CD220F;
+    text-align: center;
+    font-weight: 900;
+    font-size:35px;
+}
+.loginpage button{
+    background-color:#00284d;
+    color:white;
+    font-style: bold;
+    margin:auto;
+}
+
+
+/* InDEXPAGE START */
+  
+.indeximg{
+    /* display:block;
+    margin-left: auto;
+  margin-right: auto; */
+ 
+}
+.indeximg  img:hover{
+width:16rem;
+}
+
+
+.indexbtn{
+    background-color:#CD220F;
+    color:white;
+}
+
+.indexbtn:hover{
+    background-color:#00284d;
+
+}
+
+.indexsection{
+
+}
+
+.indexsection button a{
+color:white;
+
+}
+/* END INDEX PAGE */
+
+/* Registration Page */
+.registform{
+    /* position: relative; */
+}
+
+
+.footer{
+    background-color:#00284d;
+    color: white;
+    text-align: center;
+}
+/* ENd FOOTER */
+
+
+
+/* profile PAGE */
+
+.profiletable {
+    margin-left: auto; 
+    margin-right: auto;
+    border:none;
+    
+  }
+
+  /* .profiletable tr {
+   text-align: justify;
+   padding-left:3px;
+  } */
+  
+  
+
+  .profilename{
+      font-style: bold;
+      color:#00284d;
+      font-size: 25px;
+      text-align: center;
+      font-weight: 800;
+      margin-top:3px;
+  }
+/* END PROFILE PAGE */
+
+.card_image {
+    margin-left: 37%;
+    margin-top: -61px;
+}
+
+.card_image_format{
+    width: 70;
+    height: 70;
+}
+
+.card_image2 {
+    margin-left: 2%;
+    /* margin-top: 0px; */
+}
