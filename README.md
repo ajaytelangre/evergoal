@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # evergoal
 =======
 =======
@@ -69,3 +70,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 >>>>>>> initial commit
 =======
 >>>>>>> initial commit
+=======
+# evergoal
+>>>>>>> Initial commit
