@@ -24,29 +24,52 @@
         <div class="row justify-content-center">
         
            <!-- card -->
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="card mt-5">
+            <div class="col-12 col-md-6 col-lg-6 mt-5 pb-5">
+                <div class="card mt-5 pb-5 ">
                     <div class="card-body">
                         <h5 class="card-title text-center">Enquiry Form</h5>
                             <div class="form-group">
                                 <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+                                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="Enter name">
+                                @if ($errors->has('name')) 
+                                    <div class="error alert alert-danger ">{{ $errors->first('name') }}</div>
+                                @endif
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email address:</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" placeholder="Enter email address">
                             </div>
 
                             <div class="form-group">
                                 <label for="mobile">Mobile Number:</label>
-                                <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="Enter mobile number">
+                                <input type="mobile" class="form-control" id="mobile" name="mobile" value="{{old('mobile')}}" placeholder="Enter mobile number">
+                                @if ($errors->has('mobile')) 
+                                    <div class="error alert alert-danger ">{{ $errors->first('mobile') }}</div>
+                                @endif
                             </div>
 
                             <div class="form-group">
                                 
                                 <button type="submit" class="btn btn-success btn-block "  id="submit">Submit</button>
+                              
                             </div>
+                            
+                            <div class="form-group">
+                                
+                                @if(Session::has('message'))
+                                        <div class="alert alert-success">
+                                            <ul>
+                                                
+                                                    <li>{{ Session::get('message') }}</li>
+                                                
+                                            </ul>
+                                        </div>
+                                @endif
+                              
+                            </div>
+
+                     
                     </div>
                 </div>
             </div>

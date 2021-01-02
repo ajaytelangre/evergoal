@@ -6,6 +6,7 @@ use App\Http\Controllers\Subregistcontroller;
 use App\Http\Controllers\ScheduleTaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\InvoiceController;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get('/front', function () {
 Route::get('/enquiry',function(){
     return view('enquiry');
 });
+
+Route::post('send_email',[MailController::class,'sendEmail']);
 
 Route::post('submit_enquiry',[EnquiryController::class,'enquiry']);
 
