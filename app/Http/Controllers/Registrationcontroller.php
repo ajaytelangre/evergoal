@@ -222,6 +222,12 @@ class Registrationcontroller extends Controller
          on(t7.sponserid=t6.id) left join users as t8 on(t8.sponserid=t7.id) where t1.id=:id'),array(
             'id'=>$id,
         ));
+
+
+        $direct_id_active_count=count(DB::select(DB::raw('SELECT id from users where sponserid=:id and status=:status1'),array(
+            'id'=>$id,
+            'status1'=>'active',
+        )));
      
    
        $lev1=$lev2=$lev3=$lev4=$lev5=$lev6=$lev7=$lev8=array();
@@ -261,7 +267,85 @@ class Registrationcontroller extends Controller
        $users_data['count_level81']=array_filter(array_unique($lev8));
        $list_count=(array_merge($users_data['count_level21'],$users_data['count_level31'],$users_data['count_level41'],$users_data['count_level51'],$users_data['count_level61'],$users_data['count_level71'],$users_data['count_level81']));
 
-   
+
+
+       $list_users_count='';
+       $level2_active_users_count=count(DB::table('users')  //second level active user count
+                    ->whereIn('id', $users_data['count_level21'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+       //return $level2_active_users_count;
+       
+        $level3_active_users_count=count(DB::table('users')  //3 level active user count
+                    ->whereIn('id', $users_data['count_level31'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+                   
+        $level4_active_users_count=count(DB::table('users')  //4 level active user count
+                    ->whereIn('id', $users_data['count_level41'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+       
+       $level5_active_users_count=count(DB::table('users')  //5 level active user count
+                    ->whereIn('id',$users_data['count_level51'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+
+       $level6_active_users_count=count(DB::table('users')  //6 level active user count
+                    ->whereIn('id', $users_data['count_level61'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+
+        $level7_active_users_count=count(DB::table('users')  //7 level active user count
+                    ->whereIn('id', $users_data['count_level71'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+
+        $level8_active_users_count=count(DB::table('users')  //8 level active user count
+                    ->whereIn('id', $users_data['count_level81'])
+                    ->where('status','active')
+                    ->select('id')
+                   ->get());
+
+       //return $level2_active_users_count;
+       if($direct_id_active_count>=1)
+       {
+           $list_users_count=$level2_active_users_count;
+       }
+       //return $list_users_count;
+      
+       if($direct_id_active_count>=3 and ($level4_active_users_count>0))      //for level 2
+       {
+           $list_users_count=$list_users_count+($level3_active_users_count*2);  //level 2 rs count
+       }
+       if($direct_id_active_count>=4 and ($level5_active_users_count>0))  //for level 3
+       {
+           $list_users_count=$list_users_count+($level4_active_users_count*3);   //level 3 rs count
+       }
+       if($direct_id_active_count>=5 and ($level6_active_users_count>0)) //for level 4
+       {
+           $list_users_count=$list_users_count+($level5_active_users_count*4);    //level 4 rs count
+       }
+       if($direct_id_active_count>=6 and ($level7_active_users_count>0)) //for level 5
+       {
+           $list_users_count=$list_users_count+($level6_active_users_count*5);   //level 5 rs count
+       }
+       if($direct_id_active_count>=7 and ($level8_active_users_count>0)) //for level 6
+       {
+           $list_users_count=$list_users_count+($level7_active_users_count*6);   //level 6 rs count
+       }
+       if($direct_id_active_count>=10) //for level 7
+       {
+           $list_users_count=$list_users_count+($level8_active_users_count*7);    //level 7 rs count
+       }
+       
+       //return $list_users_count;
 
 
         $data['user']=DB::table('users')->where('id',$id)->get();
@@ -294,7 +378,9 @@ class Registrationcontroller extends Controller
           
         $data['deactive']=count($deactive);
         $data['active']=count($active);
-      
+        $data['level_benifit']=$list_users_count;
+        $data['total_benifit']=25+(int)$list_users_count;
+        $data['daily_benifit']=25;
         $data['counts']=count($counts);
      
         return view('cards',$data);

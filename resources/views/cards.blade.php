@@ -92,14 +92,14 @@
                 <!-- <h2 class="card-title">Card title</h2> -->
                 
                 <!-- Card Text -->
-                <p class="card-text text-center">140 <br>
+                <p class="card-text text-center">{{$daily_benifit}} <br>
                     DAILY BENIFIT
                     <br>
-                    0
+                    {{$level_benifit}}
                     <br>
                     LEVEL BENIFIT
                     <br>
-                   140
+                    {{$total_benifit}}
                    <br>
                    TOTAL BENIFIT
                 </p>
