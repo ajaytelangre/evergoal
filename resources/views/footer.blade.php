@@ -1,6 +1,6 @@
-  
-<footer class="footer fixed-bottom mt-3 ">
-<div class="container">
+
+<footer class="footer fixed-bottom">
+<div class="container ">
     <div class="row">
 
         <div class="col-md-4 p-3">copyright &copy 2020|All rights reserved</div>

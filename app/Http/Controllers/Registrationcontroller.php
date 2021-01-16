@@ -464,54 +464,11 @@ class Registrationcontroller extends Controller
 
     public function mywalllet_list()
     {
-        $id=session()->get('id');
-        $user_id=DB::select(DB::raw('SELECT t1.id as lev1, t2.id as lev2, t3.id as lev3,t4.id as lev4,t5.id as
-        lev5,t6.id as lev6,t7.id as lev7, t8.id as lev8 from users as t1 left join users as t2 on (t2.sponserid=t1.id) left join users as t3 on(t3.sponserid=t2.id) 
-        left join users as t4 on(t4.sponserid=t3.id) left join users as t5 on(t5.sponserid=t4.id) left join users as t6 on(t6.sponserid=t5.id) left join users as t7
-         on(t7.sponserid=t6.id) left join users as t8 on(t8.sponserid=t7.id) where t1.id=:id'),array(
-            'id'=>$id,
-        ));
+       
+       $id=session()->get('id');
+       $data['amount']=Amount::find($id);
      
-      
-       $lev1=$lev2=$lev3=$lev4=$lev5=$lev6=$lev7=$lev8=array();
-       $c=0;
-       foreach($user_id as $x=>$y)
-       {
-          
-           array_push($lev1,$y->lev1);
-           array_push($lev2,$y->lev2);
-           array_push($lev3,$y->lev3);
-           array_push($lev4,$y->lev4);
-           array_push($lev5,$y->lev5);
-           array_push($lev6,$y->lev6);
-           array_push($lev7,$y->lev7);
-           array_push($lev8,$y->lev8);
-         
-       }
-       $count_level2=count(array_filter(array_unique($lev2)));
-       $count_level3=count(array_filter(array_unique($lev3)));
-       $count_level4=count(array_filter(array_unique($lev4)));
-       $count_level5=count(array_filter(array_unique($lev5)));
-       $count_level6=count(array_filter(array_unique($lev6)));
-       $count_level7=count(array_filter(array_unique($lev7)));
-       $count_level8=count(array_filter(array_unique($lev8)));
-       $total_count=$count_level2+$count_level3+$count_level4+$count_level5+$count_level6+$count_level7+$count_level8;
-
-       $users_data['count_level21']=array_filter(array_unique($lev2));
-       $users_data['count_level31']=array_filter(array_unique($lev3));
-       $users_data['count_level41']=array_filter(array_unique($lev4));
-       $users_data['count_level51']=array_filter(array_unique($lev5));
-       $users_data['count_level61']=array_filter(array_unique($lev6));
-       $users_data['count_level71']=array_filter(array_unique($lev7));
-       $users_data['count_level81']=array_filter(array_unique($lev8));
-       $list_count=(array_merge($users_data['count_level21'],$users_data['count_level31'],$users_data['count_level41'],$users_data['count_level51'],$users_data['count_level61'],$users_data['count_level71'],$users_data['count_level81']));
-    
-      
-       $users_data['data1'] = DB::table('users')
-                    ->whereIn('id', $list_count)
-                    ->get();
-      
-       return view('sample',$users_data);
+       return view('wallet',$data);
    
     }
 

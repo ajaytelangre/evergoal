@@ -54,9 +54,9 @@
             <h5>धन्यवाद. </h5>
         </div>
 
-        <div class="row text-center mt-2">
+        <!-- <div class="row text-center mt-2">
             <div class="border border-dark"><h6>लकी पोर्टल २ मध्ये पहिल्या १ लाख लोकांचा समावेश राहणार नाही</h6></div>
-        </div>
+        </div> -->
     </div>
 
 
