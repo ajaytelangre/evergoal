@@ -67,12 +67,9 @@
 											  </div>
 											  <input id="mobile" type="mobile" for="mobile" name="mobile" value="{{ old('mobile') }}" class="form-control form-control-lg text_box_radius  @error('mobile') is-invalid @enderror text_box"  placeholder="mobile" required autocomplete="mobile" >
 
-											 @error('mobile')
-											<span class="invalid-feedback" role="alert">
-												<strong>{{ $message }}</strong>
-											</span>
-											@enderror
 										</div>
+										
+									
 							  </div> <!-- form group-->
 						  </div>
 						  <div class=" row justify-content-center "> 
@@ -91,6 +88,14 @@
 										</div> <!-- input group-->
 							  </div><!-- form group-->
 						  </div>
+						  <div class="row justify-content-center mb-2"> <!-- row-->
+						 				 @error('mobile')
+											 
+											 <span class="text-danger text-center" role="alert">
+												 <strong>{{ $message }}</strong>
+											 </span>
+											 @enderror
+						    </div>
 							<div class="row justify-content-center"> <!-- row-->
 								<div class="col-8"> <!-- col-6-->
 									<div class="row justify-content-center"> <!-- row-->

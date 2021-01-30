@@ -14,49 +14,47 @@
     @include('navbar')
 
     <div class="container mt-2">
-            <div class="row justify-content-center">
+            
+          <form action="{{url('/submit_task')}}" method="post" enctype='multipart/form-data'>
+            @csrf
+            </div>  <div class="row justify-content-center mt-5">
+         
                 <div class="col-12 col-lg-6 text-center text-white" >
-                    <label class=""><b>1 Task: </b>Please See This video full.</label>
-                    <iframe width="100%" class="youtube" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-                    </iframe>
-                </div>
-          <form action="">
-            </div>  <div class="row justify-content-center">
-                <div class="col-12 col-lg-6 text-center text-white" >
-                    <label clsss=""><b>2 Task: </b>Please Upload one Post on Fb and upload screen shot here.</label>
+                    <label clsss=""><b>1 Task: </b>Please Upload one Post on Fb and upload screen shot here.</label>
                      <div class="row">
                             <div class="col-5">
-                             <input type="file" class="btn" name="screenshot">
+                             <input type="file" name="task" class="btn" name="screenshot">
                             </div>
                             <div class="col-7">
                             <button type="submit" class="btn btn-secondary">Submit</button>
                             </div>
                     </div>
+                    <div class="row">
+                    @if ($errors->any())
+                        <div class="alert text-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                      @endif
+
+                      @if(Session::has('message'))
+                        <p class="alert text-success">{{ Session::get('message') }}</p>
+                     @endif
+                    </div>
                 </div>
+                
+               
           
             </div>
+        
         </form>             
 
     </div>
         <!--------footer--------->
-        <div class="footer fixed-bottom" >
-            <footer>
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-4 p-3">copyright &copy 2020|All rights reserved</div>
-
-                    <div class="col-md-4 p-3">Terms & Conditions|About Us</div>
-
-                    <div class="col-md-4 p-3">Follow us:   <img  class="ml-1" src="img/fb.png" alt="">    <img class="ml-1" src="img/whatsapp.png" alt="">
-                
-                </div>
-
-                </div>
-            </div>  
-            </footer>
-            </div>
-
+    @include("footer")
 
 
 

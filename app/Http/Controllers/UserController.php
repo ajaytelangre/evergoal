@@ -38,6 +38,29 @@ class UserController extends Controller
      
        return view("withdraw_details",$data);
    }
+
+   public function attempted_task()
+   {
+        $id=session()->get('id');
+        $data['details']= DB::table('tasks')
+                        ->where("user_id",$id)
+                        ->where("status","approved")
+                        ->orderBy('id', 'DESC')
+                        ->get();
+    
+        return view("attempted_task",$data);
+   }
+
+   public function wallet_report()
+   {
+       $id=session()->get('id');
+       $data['details']= DB::table('wallet_amounts')
+                         ->where("user_id",$id)
+                         ->orderBy('id', 'DESC')
+                        ->get();
+     
+       return view("wallet_report",$data);
+   }
    
     public function topup()
     {

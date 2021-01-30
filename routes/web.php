@@ -18,13 +18,15 @@ use App\Http\Controllers\InvoiceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/attempted_task',[UserController::class,'attempted_task']);
+Route::post('/submit_task',[Registrationcontroller::class,'submit_task']);
 Route::get('/', function () {
     return view('login');
 });
 Route::get('/withdraw',[UserController::class,'withdraw']);
 
 Route::get('/withdraw_details',[UserController::class,'withdraw_details']);
+Route::get('/wallet_report',[UserController::class,'wallet_report']);
 
 Route::post('/withdraw_amount',[UserController::class,'withdraw_amount']);
 

@@ -6,6 +6,7 @@ use App\Models\Registration;
 use App\Models\Bank;
 use App\Models\User;
 use App\Models\Amount;
+use App\Models\Task;
 
 use Illuminate\Support\Facades\DB;
 
@@ -728,6 +729,39 @@ class Registrationcontroller extends Controller
 
         return "data saved";
        
+    }
+
+    public function submit_task(Request $request)
+    {
+        $validatedData=Validator::make($request->all(),[
+            'task'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+        if($validatedData->fails())
+        {
+            return Redirect::back()->withErrors($validatedData);
+        }
+        else{
+           // $pimg= $request->pimg->getClientOriginalName();
+           $file_name=$request->file('task')->store('task','public');
+           if($file_name)
+           {
+               $user_id=session()->get('id');
+               $data=new Task;
+               $data->user_id=$user_id;
+               $data->task_img=$file_name;
+               $data->status="pending";
+               $data->save();
+               return Redirect::back()->with("message","Task Uploaded");
+
+               
+           }
+           else{
+            return Redirect::back()->with("message","Data uploadation fail");
+           }
+
+        }
+        //return $request->all();
+
     }
    
     

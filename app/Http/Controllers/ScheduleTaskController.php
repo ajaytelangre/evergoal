@@ -8,6 +8,7 @@ use App\Models\Registration;
 use App\Models\Bank;
 use App\Models\User;
 use App\Models\Amount;
+use App\Models\Wallet_amount;
 
 use Illuminate\Support\Facades\DB;
 
@@ -221,6 +222,14 @@ class ScheduleTaskController extends Controller
             $user_i->total_amount=$total_rs;
             $user_i->updated_amount_time=Carbon::now();
             $user_i->save();
+            
+            $wallet_amount=25+(int)$list_users_count;
+            $wallet = new Wallet_amount;
+            $wallet->user_id = $id2;
+            $wallet->description = "Level Incentive Credited";
+            $wallet->credit = $wallet_amount;
+            $wallet->save();
+
     
             
 

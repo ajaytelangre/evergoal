@@ -56,7 +56,7 @@
                       aria-expanded="false">Task</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink1">
                       <a class="dropdown-item" href="{{url('/task')}}">Task</a>
-                      <a class="dropdown-item" href="#">Attempted Task</a>
+                      <a class="dropdown-item" href="{{url('/attempted_task')}}">Attempted Task</a>
                     </div>
                   </li>
                 <!---------- Task Dropdown close   ------------>
@@ -87,7 +87,7 @@
                       aria-expanded="false">Wallet</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink3">
                       <a class="dropdown-item" href="{{url('/mywallet')}}">My Wallet</a>
-                      <a class="dropdown-item" href="#">Wallet Report</a>
+                      <a class="dropdown-item" href="{{url('/wallet_report')}}">Wallet Report</a>
                     </div>
                   </li>
                 <!---------- Wallet Dropdown close ------------>
