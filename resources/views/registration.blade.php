@@ -14,7 +14,7 @@
 
 </head>
 
-<body  onload="createCaptcha()" style="background-image:url('img/back.jpg'); background-repeat: no-repeat; background-size:cover;" >
+<body  onload="createCaptcha()" style="background-image:url('img/back1.png'); background-repeat: no-repeat; background-size:cover;" >
 @include('navbar')
 <!-- Main Content -->
 

@@ -56,6 +56,7 @@ body{
 }
 /* START lOGIN PAGE */
 .loginpage{
+    margin-top: 10%;
 
 
 }
@@ -64,7 +65,7 @@ background-color: #00284d;
 
 }
 .loginpage .fa-unlock-alt, .fa-user{
-color: #ffffff;
+color: #CD220F;;
 
 }
 .loginpage h2{
@@ -166,7 +167,150 @@ color:white;
     height: 70;
 }
 
+.footer-margin{
+    margin-top: 20%;
+}
+
 .card_image2 {
     margin-left: 2%;
     /* margin-top: 0px; */
 }
+
+.text_color
+{
+    color: #0c4160;
+}
+.header_font{
+    font-family: 'Montserrat', sans-serif;
+    color: #0c4160;
+    font-size: 3.7rem;
+    line-height: normal;
+}
+
+.index_header{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sub_heading{
+    color: #db3e1f;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.background_color{
+    background: #db3e1f;
+ 
+    color: white !important;
+    
+}
+
+
+.navabar_border{
+    
+    border-radius: 10px;
+
+
+}
+
+.navbar_bg{
+    background-color: #00284d;
+}
+
+.img_border{
+    
+    border: 3px solid #160a08;
+    border-radius: 20px;
+    height: 256px;
+}
+
+.btn_border{ 
+    border: 3px solid #160a08;
+    color: #db3e1f !important;
+    border-radius: 15px;
+    font-weight: bold;
+    background: white;
+
+
+   
+}
+
+
+a:hover {
+    text-decoration: none;
+  }
+
+  .heading_margin{
+    margin-top: 10% !important;
+  }
+
+.login{
+    min-height: 100vh;
+}
+ 
+@media (max-width: 1199.98px) { 
+    .login_margin {
+        margin-top: 18% !important;
+ }
+}
+@media all and (max-width: 1000px) and (min-width: 700px) {
+    .login_margin {
+        margin-top: 18% !important;
+    }
+  }
+.button_radius{
+    border-bottom-left-radius: 28px;
+    border-top-left-radius: 28px;
+    border-right: none;
+    background-color: white;
+    color: #CD220F !important;
+    
+}
+
+.text_box_radius{
+    font-size: 15px;
+    width: 250px;
+    border-bottom-right-radius: 28px;
+    border-top-right-radius: 28px;
+    border-left: none;
+    
+}
+
+
+
+.welcome{
+    margin-top: 28%;
+    
+}
+.welcome_size{
+    font-size: 4vw;
+}
+
+.text_color_red{
+    color: #db3e1f ;
+}
+.logo_height{
+    height: 8rem;
+}
+
+.text_box
+{
+    height: 35px;
+}
+
+.button_logo{
+  
+    font-size: 19px;
+}
+
+.login_button{
+    border-radius: 20px;
+    color: white;
+    
+    background-repeat: repeat; 
+    background-size:cover;
+}
+
+.text_height{
+    line-height: 0;
+}
+ 

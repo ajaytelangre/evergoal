@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
      <link href="css/style.css" rel="stylesheet">
-      
-
+      <style> 
+  
+  </style> 
 </head>
 
-<body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat; background-size:cover;" >
+<body style="background-image:url('img/back1.png'); background-repeat:; background-size:cover;" >
 @include('navbar')
 <!-- Main Content -->
 
-<div class="container  mb-5" style="margin-top: 1rem">
+<div class="container  mb-5 heading_margin" style="">
 
-       <h2 class="text-center"><span style="color:#FFFFFF;">WELCOME TO EVERGOAL INDIA PVT.LTD.</span></h2>
+       <h1 class="text-center index_header mt-4"><span style="color:#FFFFFF;">Welcome to <strong> Evergoal India Pvt.Ltd.</strong></span></h1>
 
        <!-- <div class="text-center mt-3">
         <h3 >Reference Link</h3>
@@ -32,9 +34,9 @@
 
         <div class="col-md-3 mt-3">
         <div class="text-center indeximg">
-         <img class=" img-fluid " src="img/newregist.png" alt=""></br>
+         <img class=" img-fluid img_border" src="img/newregist.png" alt=""></br>
         
-        <button type="button" class="btn mt-3 btn-secondary">   <a href="{{url('/registration')}}">New Registeration</a></button>
+        <a type="button" class="btn  mt-3 btn-lg btn_border btn-block" href="{{url('/registration')}}">New Registeration</a>
          </div>
         </div>
 
@@ -42,22 +44,22 @@
 
         <div class="col-md-3 mt-3">
         <div class="text-center indeximg">
-          <img class="img-fluid" src="img/newtopupwallet.png" alt=""></br>
-            <button type="button" class="btn mt-3 btn-secondary"><a href="{{url('/topup')}}">Get Topup</a></button>
+          <img class="img-fluid img_border" src="img/newtopupwallet.png" alt=""></br>
+            <a type="button" class="btn  mt-3 btn-lg btn_border btn-block" href="{{url('/topup')}}">Get Topup</a>
         </div>
          </div>
  
         <div class="col-md-3 mt-3">
           <div class="text-center indeximg">
-              <img class="img-fluid" src="img/android1.png" alt=""></br>
-               <a href="{{url('/portal')}}"> <button type="button" class="btn mt-3 btn-secondary">KUBER APP</button></a>
+              <img class="img-fluid img_border" src="img/android1.png" alt=""></br>
+               <a href="{{url('/portal')}}" type="button" class="btn  mt-3 btn-lg btn_border btn-block">KUBER APP</a>
           </div>
        </div>
 
        <div class="col-md-3 mt-3">
           <div class="text-center indeximg">
-              <img class="img-fluid" src="img/newpolicytext.png" alt=""></br>
-               <a href="{{url('/portal')}}"> <button type="button" class="btn mt-3 btn-secondary">Policy</button></a>
+              <img class="img-fluid img_border" src="img/newpolicytext.png" alt=""></br>
+               <a href="{{url('/portal')}}" type="button" class="btn  mt-3 btn-lg btn_border btn-block">Policy</a>
           </div>
        </div>
 

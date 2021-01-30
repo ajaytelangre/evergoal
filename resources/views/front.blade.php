@@ -10,7 +10,7 @@
 
     <title>Evergoal India Pvt Ltd.</title>
   </head>
-  <body class="" style="background-image:url('img/back3.jpg'); background-repeat: no-repeat;background-size:cover;">
+  <body class="" style="background-image:url('img/back1.png'); background-repeat: no-repeat;background-size:cover;">
     <div class="container pt-2 mt-5 ">
       <div class="">
         <h1 class="text-white text-center">Evergoal India Pvt Ltd.</h1><br>

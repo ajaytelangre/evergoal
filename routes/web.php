@@ -22,6 +22,11 @@ use App\Http\Controllers\InvoiceController;
 Route::get('/', function () {
     return view('login');
 });
+Route::get('/withdraw',[UserController::class,'withdraw']);
+
+Route::get('/withdraw_details',[UserController::class,'withdraw_details']);
+
+Route::post('/withdraw_amount',[UserController::class,'withdraw_amount']);
 
 Route::get('/front', function () {
     return view('login');

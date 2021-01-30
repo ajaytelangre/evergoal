@@ -10,7 +10,7 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Evergoal</title>
   </head>
-  <body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat; background-size:cover;"> 
+  <body style="background-image:url('img/back1.png'); background-repeat: no-repeat; background-size:cover;"> 
       @include('navbar')
    <div class="container mb-3">
        <div class="row row justify-content-center ">
@@ -84,23 +84,8 @@
      
    </div>
     
- 
-      
-    <footer class="footer  mt-5 ">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-md-4 p-3">copyright &copy 2020|All rights reserved</div>
-
-            <div class="col-md-4 p-3">Terms & Conditions|About Us</div>
-
-            <div class="col-md-4 p-3">Follow us:   <img  class="ml-1" src="img/fb.png" alt=""><img class="ml-1" src="img/whatsapp.png" alt="">
-        
-        </div>
-
-        </div>
-    </div>  
-    </footer>
+@include('footer')
 
     
 

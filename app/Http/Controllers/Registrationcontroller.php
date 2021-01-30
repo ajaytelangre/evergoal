@@ -400,6 +400,7 @@ class Registrationcontroller extends Controller
         $data['user']=DB::select(DB::raw('SELECT name from users where id=:id'),array(
             'id'=>$id,
         ));
+       // return $data;   
        return view('uploadkyc',$data);
     }
 

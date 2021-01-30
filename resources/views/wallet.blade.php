@@ -15,7 +15,7 @@
 
 </head>
 
-<body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat; background-size:cover;" >
+<body style="background-image:url('img/back1.png'); background-repeat: no-repeat; background-size:cover;" >
     @include('navbar')
 <!-- Main Content -->
     <div class="container mb-5">

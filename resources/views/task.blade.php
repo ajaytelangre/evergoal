@@ -10,7 +10,7 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Evergoal</title>
   </head>
-  <body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat; background-size:cover;">
+  <body style="background-image:url('img/back1.png'); background-repeat: no-repeat; background-size:cover;">
     @include('navbar')
 
     <div class="container mt-2">

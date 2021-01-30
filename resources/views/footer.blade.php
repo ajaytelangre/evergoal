@@ -1,5 +1,5 @@
 
-<footer class="footer fixed-bottom">
+<footer class="footer footer-margin ">
 <div class="container ">
     <div class="row">
 

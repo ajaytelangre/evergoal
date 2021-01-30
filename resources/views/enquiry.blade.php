@@ -14,7 +14,7 @@
 
 </head>
 
-<body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat;background-size:cover;">
+<body style="background-image:url('img/back1.png'); background-repeat: no-repeat;background-size:cover;">
 
 <!-- Main Content -->
 <form action="{{url('/submit_enquiry')}}" method="post">

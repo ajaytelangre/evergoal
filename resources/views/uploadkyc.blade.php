@@ -10,14 +10,14 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Evergoal</title>
   </head>
-  <body style="background-image:url('img/back3.jpg'); background-repeat: no-repeat; background-size:cover;">
+  <body style="background-image:url('img/back1.png'); background-repeat: no-repeat; background-size:cover;">
   @include('navbar')
     <div class="container">
         <main class="my-form">
             <div class="cotainer">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                            <div class="card">
+                            <div class="card mt-5">
                                 <div class="card-header">
                                   @foreach($user as $users)
                                   {{$users->name}}
