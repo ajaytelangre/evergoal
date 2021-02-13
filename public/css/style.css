@@ -10,6 +10,7 @@ body{
         position: fixed;
         top: 50px;
         left: 0;
+        font-size: 15px;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
@@ -123,8 +124,8 @@ color:white;
 
 
 .footer{
-    background-color:#00284d;
-    color: white;
+    background-color:#c2ccd48a;
+    color: black;
     text-align: center;
 }
 /* ENd FOOTER */
@@ -158,7 +159,7 @@ color:white;
 /* END PROFILE PAGE */
 
 .card_image {
-    margin-left: 37%;
+    margin-left: 42%;
     margin-top: -61px;
 }
 
@@ -212,19 +213,50 @@ color:white;
 
 }
 
-.navbar_bg{
-    background-color: #00284d;
-}
+@media screen and (max-width: 991px) {
+    .navbar_bg{
+      background-color: #0c4160;
+    }
+    .tabs_color{
+       
+     
+        color: white !important;
+        
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    .navbar_bg{
+      background-color: #e9ecef;
+    }
+
+    .tabs_color{
+        background: #db3e1f;
+        margin-left: 5px;
+        border-radius: 10px;
+        width: 7rem;
+        padding-top: 2px;
+        padding-bottom: 2px;
+   
+      
+     
+        color: white !important;
+        
+    }
+
+   
+  }
+
 
 .img_border{
     
-    border: 3px solid #160a08;
+    border: 3px solid #db3e1f;
     border-radius: 20px;
     height: 256px;
 }
 
 .btn_border{ 
-    border: 3px solid #160a08;
+    border: 3px solid #db3e1f;
     color: #db3e1f !important;
     border-radius: 15px;
     font-weight: bold;
@@ -240,7 +272,7 @@ a:hover {
   }
 
   .heading_margin{
-    margin-top: 10% !important;
+    margin-top: 5% !important;
   }
 
 .login{
@@ -313,4 +345,58 @@ a:hover {
 .text_height{
     line-height: 0;
 }
+
+.card_height{
+    height: 18rem;
+    
+    border-radius: 30px;
+}
+
+.card_header{
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
+}
+
+.card_footer{
+    border-bottom-left-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+}
+
+.card_border{
+    border-radius: 30px;
+}
+
+.border_color{
+    border-color: #db3e1f;
+    border-width: initial;
+}
  
+.circle_img{
+    border-radius: 50%;
+}
+.wallet{
+    height: 208px;
+    width: 250px;
+    margin-left: 16%;
+}
+
+.bg_red{
+    background-color: #db3e1f;
+}
+
+.button_red{
+    background: #db3e1f;
+}
+
+.team_profile_logo{
+    margin-top: -42px;
+    width: 80px;
+    height: 80px;
+}
+
+.logo{
+    padding: 7px;
+    width: 50px;
+    background: #e9ecef;
+}
+

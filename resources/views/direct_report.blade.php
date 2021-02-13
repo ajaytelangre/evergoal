@@ -14,19 +14,22 @@
       @include('navbar')
    <div class="container mb-3">
        <div class="row row justify-content-center ">
-            <div class="col-lg-8 col-12 mb-6">
-                <div class="card text-center ">
-                    <div class="card-header">
-                     <h3> YOUR TEAM LIST<h3>
+            <div class="col-lg-8 col-12 mb-6 text-center">
+					<h3 class="text-white"> YOUR TEAM LIST</h3>
+                <div class="card text-center border_color card_border">
+                    <div class="card-header bg_red card_header">
+						  
+                      <h5 class="card-title mt-1 pb-4 text-white">{{session()->get('user_name')}} <BR>id : {{session()->get('id')}}</h5>
+					 
                     </div>
+					  <div class="card_image2">
+								<img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle team_profile_logo" alt="Cinque Terre" >
+							</div>
                     <div class="card-body">
-                        <div class="card_image2">
-                            <img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80">
-                        </div>
-                      <h5 class="card-title mt-1">{{session()->get('user_name')}} <BR>id:{{session()->get('id')}}</h5>
+                     
                       <!----- Table content----->
                       <div class="table-responsive"> 
-                        <table class="table table-striped">
+                        <table class="table text-info table-hover">
                                 <thead>
                                     <tr>
                                     <th scope="col">ID</th>
@@ -72,7 +75,7 @@
                       <!----- Table content close----->
 
                     </div>
-                    <div class="card-footer text-muted">
+                    <div class="card-footer text-white card_footer bg_red">
                       Do more get more.
                     </div>
 

@@ -29,9 +29,12 @@
     <div class="container"> <!--  Container -->
         <div class="row justify-content-center "> <!--  Container -->
             <div class="col-lg-6"> <!--  col -->
-                <div class="card mt-5" style=""><!--  card -->
+                <div class="card mt-5 border_color card_border" style=""><!--  card -->
+					<div class="card-header bg_red card_header">
+						<h5 class="card-title text-center text-white">Withdraw Funds</h5>
+					</div>
                     <div class="card-body"> <!--  card body -->
-                        <h5 class="card-title text-center">Withdraw Funds</h5>
+                        
                         @if (Session::has('success')) 
                                <div class="text-success mb-2">* <h4>{{Session::get('success')}}</h4> </div>
                         @endif
@@ -91,7 +94,7 @@
                     </div>  <!--  card body -->
                         <div class="row justify-content-center mb-4">
                             <div class="col-8 ">
-                                <button type="submit" class="btn btn-primary btn-lg mb-2 btn-block btn-circle ">Withdraw Request</button>
+                                <button type="submit" class="btn allbtn btn-lg mb-2 btn-block btn-circle ">Withdraw Request</button>
                             </div>
                         </div>
                 </div> <!--  card -->

@@ -9,6 +9,7 @@ use App\Models\Bank;
 use App\Models\User;
 use App\Models\Amount;
 use App\Models\Wallet_amount;
+use App\Models\Commision;
 
 use Illuminate\Support\Facades\DB;
 
@@ -71,7 +72,7 @@ class ScheduleTaskController extends Controller
         {
             array_push($id,$ids->id);
         }
-       
+        $commision=Commision::find(1);
         foreach($id as $id2)
         {
             
@@ -163,33 +164,33 @@ class ScheduleTaskController extends Controller
             
             if($direct_id_active_count>=2)
             {
-                $list_users_count=$level2_active_users_count;
+                $list_users_count=$level2_active_users_count*(int)$commision->level_1;
             }
            
            
             if($direct_id_active_count>=3 and ($level4_active_users_count>0))      //for level 2
             {
-                $list_users_count=$list_users_count+($level3_active_users_count*2);  //level 2 rs count
+                $list_users_count=$list_users_count+($level3_active_users_count*(int)$commision->level_2);  //level 2 rs count
             }
             if($direct_id_active_count>=4 and ($level5_active_users_count>0))  //for level 3
             {
-                $list_users_count=$list_users_count+($level4_active_users_count*3);   //level 3 rs count
+                $list_users_count=$list_users_count+($level4_active_users_count*(int)$commision->level_3);   //level 3 rs count
             }
             if($direct_id_active_count>=5 and ($level6_active_users_count>0)) //for level 4
             {
-                $list_users_count=$list_users_count+($level5_active_users_count*4);    //level 4 rs count
+                $list_users_count=$list_users_count+($level5_active_users_count*(int)$commision->level_4);    //level 4 rs count
             }
             if($direct_id_active_count>=6 and ($level7_active_users_count>0)) //for level 5
             {
-                $list_users_count=$list_users_count+($level6_active_users_count*5);   //level 5 rs count
+                $list_users_count=$list_users_count+($level6_active_users_count*(int)$commision->level_5);   //level 5 rs count
             }
             if($direct_id_active_count>=7 and ($level8_active_users_count>0)) //for level 6
             {
-                $list_users_count=$list_users_count+($level7_active_users_count*6);   //level 6 rs count
+                $list_users_count=$list_users_count+($level7_active_users_count*(int)$commision->level_6);   //level 6 rs count
             }
             if($direct_id_active_count>=10) //for level 7
             {
-                $list_users_count=$list_users_count+($level8_active_users_count*7);    //level 7 rs count
+                $list_users_count=$list_users_count+($level8_active_users_count*(int)$commision->level_7);    //level 7 rs count
             }
     
             
@@ -216,14 +217,14 @@ class ScheduleTaskController extends Controller
     
             $available_amount1=$available_amount->total_amount;
          
-            $total_rs=25+(int)$available_amount1+(int)$list_users_count;
+            $total_rs=(int)$commision->daily_commision+(int)$available_amount1+(int)$list_users_count;
            
             $user_i=Amount::find($id2);
             $user_i->total_amount=$total_rs;
             $user_i->updated_amount_time=Carbon::now();
             $user_i->save();
             
-            $wallet_amount=25+(int)$list_users_count;
+            $wallet_amount=(int)$commision->daily_commision+(int)$list_users_count;
             $wallet = new Wallet_amount;
             $wallet->user_id = $id2;
             $wallet->description = "Level Incentive Credited";

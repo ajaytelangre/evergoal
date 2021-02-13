@@ -23,9 +23,12 @@
         @csrf
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-6">
-                <div class="card ">
-                    <div class="card-body bg-light">
-                        <h5 class="card-title text-center">Make Payment</h5>
+                <div class="card border_color card_border">
+					<div class="card-header bg_red card_header">
+						<h5 class="card-title text-center text-white">Make Payment</h5>
+					</div>
+                    <div class="card-body ">
+                       
                         @if(session('message'))
                         <div class="alert alert-success text-center">
                                 {{ session('message') }}
@@ -53,8 +56,10 @@
                                         <input type="mobile" id="mobile" name="mobile" class="form-control" placeholder="Mobile Number" aria-label="mobile" value="{{$users->mobile}}" >
                                  </div>
                             @endforeach  
-                                 <div class="row mt-1">
-                                        <button type="submit" id="submit" class=" btn btn-success btn-block">Submit</button>
+                                 <div class="row pt-4 justify-content-center">
+									<div class="col-md-4 col-lg-4">
+                                        <button type="submit" id="submit" class=" btn  allbtn text-white card_border button_red btn-block ">Submit</button>
+									</div>
                                  </div>
                             </div> 
 

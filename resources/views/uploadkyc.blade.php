@@ -17,8 +17,8 @@
             <div class="cotainer">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                            <div class="card mt-5">
-                                <div class="card-header">
+                            <div class="card mt-5 border_color card_border">
+                                <div class="card-header bg_red card_header text-white">
                                   @foreach($user as $users)
                                   {{$users->name}}
                                   @endforeach
@@ -32,7 +32,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     
-                                                    <select name="account_type" class="form-control" id="account_type">
+                                                    <select name="account_type" class="form-control card_border" id="account_type">
                                                       <option selected>--CHOOSE ACCOUNT TYPE--</option>
                                                       <option value="current">Current </option>
                                                       <option value="saving">Saving</option>
@@ -49,7 +49,7 @@
                                         <div class="form-group row">
                                             <label for="account_no" class="col-md-4 col-form-label text-md-right">Account No:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="account_no" class="form-control" name="account_no">
+                                                <input type="text" id="account_no" class="form-control card_border" name="account_no">
                                                 @if($errors->has('account_no'))
                                                             <div class="error alert alert-danger">{{$errors->first('account_no')}} </div>
                                                  @endif
@@ -61,7 +61,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     
-                                                    <select name="bank" class="form-control" id="bank">
+                                                    <select name="bank" class="form-control card_border" id="bank">
                                                       <option >--Choose Your Bank name--</option>
                                                       <option value="SBI">SBI </option>
                                                       <option value="AXIS">AXIS</option>
@@ -77,7 +77,7 @@
                                         <div class="form-group row">
                                             <label for="branch_name" class="col-md-4 col-form-label text-md-right">Branch Name:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="branch_name" name="branch_name" class="form-control">
+                                                <input type="text" id="branch_name" name="branch_name" class="form-control card_border">
                                                 @if($errors->has('branch_name'))
                                                             <div class="error alert alert-danger">{{$errors->first('branch_name')}} </div>
                                                  @endif
@@ -87,7 +87,7 @@
                                         <div class="form-group row">
                                             <label for="present_address" class="col-md-4 col-form-label text-md-right">IFSC CODE:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="ifsc" name="ifsc" class="form-control">
+                                                <input type="text" id="ifsc" name="ifsc" class="form-control card_border">
                                                 @if($errors->has('ifsc'))
                                                             <div class="error alert alert-danger">{{$errors->first('ifsc')}} </div>
                                                  @endif
@@ -98,11 +98,11 @@
                                             <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Is Pan:</label>
                                             <div class="col-md-6 mt-1">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="pan" id="inlineRadio1" value="Yes">
+                                                    <input class="form-check-input card_border" type="radio" name="pan" id="inlineRadio1" value="Yes">
                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                   </div>
                                                   <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="pan" id="inlineRadio2" value="No">
+                                                    <input class="form-check-input card_border" type="radio" name="pan" id="inlineRadio2" value="No">
                                                     <label class="form-check-label" for="inlineRadio2">No</label>
                                                   </div>
 
@@ -114,8 +114,8 @@
         
                                      
         
-                                            <div class="col-md-6 offset-md-4">
-                                                <button type="submit" class="btn btn-primary">
+                                            <div class="col-md-4 offset-md-4">
+                                                <button type="submit" class="btn text-white card_border allbtn btn-block">
                                                Submit
                                                 </button>
                                             </div>

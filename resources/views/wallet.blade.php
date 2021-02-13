@@ -20,11 +20,11 @@
 <!-- Main Content -->
     <div class="container mb-5">
         <div class="row ">
-            <div class="col offset-lg-4 offset-md-3 offset-md-1 mt-md-5 mt-lg-5 ">
+            <div class="col col-lg-4 col-md-4  offset-lg-4 offset-md-3 offset-md-1 mt-md-5 mt-lg-5 ">
             <!-- card  -->
-                <div class="card text-center" style="width: 18rem;">
-                    <img class="card-img-top" src="img/topupwalletpng.png" alt="Card image cap">
-                    <div class="card-body">
+                <div class="card text-center border_color card_border" >
+                    <img class="card-img-top wallet " src="img/Wallet.png" alt="Card image cap">
+                    <div class="card-body text_color_red">
                        <h3>Evergoal Wallet</h3>
                        <h5>Available Balance:</h5>
                        

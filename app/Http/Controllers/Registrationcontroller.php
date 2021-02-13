@@ -7,7 +7,7 @@ use App\Models\Bank;
 use App\Models\User;
 use App\Models\Amount;
 use App\Models\Task;
-
+use App\Models\Commision;
 use Illuminate\Support\Facades\DB;
 
 use Sentinel;
@@ -144,15 +144,23 @@ class Registrationcontroller extends Controller
    
     public function insertUpdate(Request $request)
     {
-        
-        $data = Registration::find($request->id);
-        $data ->sponserid = $request->sponserid;
-        $data ->name = $request->name;
-        $data ->mobileno = $request->mobileno;
-        $data ->pimg = $request->pimg;
-       
-         $data->save();
-        return redirect('showprofile') ;
+       $validatedData=Validator::make($request->all(),[
+        "name"=>"required",
+       // "mobile"=>"required|unique:users|max:10|min:10"
+
+       ]);
+       if($validatedData->fails())
+       {
+           return Redirect::back()->withErrors($validatedData);
+       }
+       else{
+            $data = User::find($request->id);
+            $data->name = $request->name;
+          //  $data->mobile = $request->mobileno;
+            $data->save();
+            return Redirect::back()->with("success","Data Updated");
+       }
+    
     }
 
 
@@ -233,6 +241,7 @@ class Registrationcontroller extends Controller
    
        $lev1=$lev2=$lev3=$lev4=$lev5=$lev6=$lev7=$lev8=array();
        $c=0;
+       $commision=Commision::find(1);
        foreach($user_id as $x=>$y)
        {
           
@@ -317,33 +326,33 @@ class Registrationcontroller extends Controller
        //return $level2_active_users_count;
        if($direct_id_active_count>=1)
        {
-           $list_users_count=$level2_active_users_count;
+           $list_users_count=$level2_active_users_count*(int)$commision->level_1;
        }
        //return $list_users_count;
       
        if($direct_id_active_count>=3 and ($level4_active_users_count>0))      //for level 2
        {
-           $list_users_count=$list_users_count+($level3_active_users_count*2);  //level 2 rs count
+           $list_users_count=$list_users_count+($level3_active_users_count*(int)$commision->level_2);  //level 2 rs count
        }
        if($direct_id_active_count>=4 and ($level5_active_users_count>0))  //for level 3
        {
-           $list_users_count=$list_users_count+($level4_active_users_count*3);   //level 3 rs count
+           $list_users_count=$list_users_count+($level4_active_users_count*(int)$commision->level_3);   //level 3 rs count
        }
        if($direct_id_active_count>=5 and ($level6_active_users_count>0)) //for level 4
        {
-           $list_users_count=$list_users_count+($level5_active_users_count*4);    //level 4 rs count
+           $list_users_count=$list_users_count+($level5_active_users_count*(int)$commision->level_4);    //level 4 rs count
        }
        if($direct_id_active_count>=6 and ($level7_active_users_count>0)) //for level 5
        {
-           $list_users_count=$list_users_count+($level6_active_users_count*5);   //level 5 rs count
+           $list_users_count=$list_users_count+($level6_active_users_count*(int)$commision->level_5);   //level 5 rs count
        }
        if($direct_id_active_count>=7 and ($level8_active_users_count>0)) //for level 6
        {
-           $list_users_count=$list_users_count+($level7_active_users_count*6);   //level 6 rs count
+           $list_users_count=$list_users_count+($level7_active_users_count*(int)$commision->level_6);   //level 6 rs count
        }
        if($direct_id_active_count>=10) //for level 7
        {
-           $list_users_count=$list_users_count+($level8_active_users_count*7);    //level 7 rs count
+           $list_users_count=$list_users_count+($level8_active_users_count*(int)$commision->level_7);    //level 7 rs count
        }
        
        //return $list_users_count;
@@ -380,8 +389,8 @@ class Registrationcontroller extends Controller
         $data['deactive']=count($deactive);
         $data['active']=count($active);
         $data['level_benifit']=$list_users_count;
-        $data['total_benifit']=25+(int)$list_users_count;
-        $data['daily_benifit']=25;
+        $data['total_benifit']=(int)$commision->daily_commision+(int)$list_users_count;
+        $data['daily_benifit']=(int)$commision->daily_commision;
         $data['counts']=count($counts);
      
         return view('cards',$data);

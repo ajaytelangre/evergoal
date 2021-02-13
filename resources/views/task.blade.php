@@ -17,16 +17,21 @@
             
           <form action="{{url('/submit_task')}}" method="post" enctype='multipart/form-data'>
             @csrf
-            </div>  <div class="row justify-content-center mt-5">
-         
-                <div class="col-12 col-lg-6 text-center text-white" >
-                    <label clsss=""><b>1 Task: </b>Please Upload one Post on Fb and upload screen shot here.</label>
-                     <div class="row">
-                            <div class="col-5">
+			
+				<div class=" mt-5 jumbotron jumbotron-fluid">
+					<div class="row justify-content-center">
+			
+                <div class="col-12 col-lg-6 text-center " >
+                    
+                     <div class="row justify-content-center">
+						<div class="col-12">
+							<label clsss=""><b>1 Task: </b>Please Upload one Post on Fb and upload screen shot here.</label>
+						</div>
+                            <div class=" col-lg-7 col-md-7 mt-3">
                              <input type="file" name="task" class="btn" name="screenshot">
                             </div>
-                            <div class="col-7">
-                            <button type="submit" class="btn btn-secondary">Submit</button>
+                            <div class=" col-11 col-lg-3 col-md-3 mt-3">
+                            <button type="submit" class="btn btn-secondary allbtn card_border btn-block">Submit</button>
                             </div>
                     </div>
                     <div class="row">
@@ -47,12 +52,12 @@
                 </div>
                 
                
-          
+				</div>
             </div>
         
         </form>             
-
-    </div>
+     </div>
+    
         <!--------footer--------->
     @include("footer")
 

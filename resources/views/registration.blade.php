@@ -23,9 +23,12 @@
     <div class="row">
         <div class="offset-2"></div>
         <div class="col-md-8">
-        <div class="card mt-5 mb-5 registform">
+        <div class="card mt-5 mb-5 registform border_color card_border">
+					<div class="card-header bg_red card_header">
+						<h5 class="card-title text-center text-white">Register Here...</h5>
+					</div>
                 <div class="card-body">
-                 <h2 class="text-center">Register Here...</h2><hr>
+
                  <!-- onsubmit="validateCaptcha()" -->
                 <form method="POST" action="{{route('profile.created')}}" enctype="multipart/form-data">
                 @csrf
@@ -38,39 +41,39 @@
             <div class="form-group">
                 
                 <label>Name(As Per Bank Details)*</label>
-                <input type="text" class="form-control" placeholder="Enter Name" value="{{old('name')}}" name="name" required>
+                <input type="text" class="form-control card_border" placeholder="Enter Name" value="{{old('name')}}" name="name" required>
                 @if($errors->has('name'))
                     <div class="error alert alert-danger">{{$errors->first('name')}} </div>
                 @endif
             </div>
 
-            <div class="form-group pt-3">
+            <div class="form-group ">
                 <label>Mobile No.(Cannot be changed later)*</label>
-                <input type="text" class="form-control" placeholder="Enter Number" name="mobile" value="{{old('mobile')}}" required> 
+                <input type="text" class="form-control card_border" placeholder="Enter Number" name="mobile" value="{{old('mobile')}}" required> 
                 @if($errors->has('mobile'))
                     <div class="error alert alert-danger">{{$errors->first('mobile')}} </div>
                 @endif
             </div>
 
-            <div class="form-group pt-3">
+            <div class="form-group ">
                <label>Email Id</label>
-                <input type="email" class="form-control" placeholder="Enter email id" name="email" value="{{old('email')}}"> 
+                <input type="email" class="form-control card_border" placeholder="Enter email id" name="email" value="{{old('email')}}"> 
                 @if($errors->has('email'))
                     <div class="error alert alert-danger">{{$errors->first('email')}} </div>
                 @endif
             </div> 
 
-            <div class="form-group pt-3">
+            <div class="form-group ">
                <label>Password</label>
-                <input type="password" class="form-control" placeholder="" name="password" value="{{old('password')}}"> 
+                <input type="password" class="form-control card_border" placeholder="" name="password" value="{{old('password')}}"> 
                 @if ($errors->has('password')) 
                      <div class="error alert alert-danger">{{ $errors->first('password') }} </div>
                 @endif
             </div> 
 
-            <div class="form-group pt-3">
+            <div class="form-group ">
                <label>Confirm Password</label>
-                <input type="password" class="form-control" placeholder="" name="password1" value="{{old('password1')}}" > 
+                <input type="password" class="form-control card_border" placeholder="" name="password1" value="{{old('password1')}}" > 
                 @if ($errors->has('password1')) 
                      <div class="error alert alert-danger ">{{ $errors->first('password1') }}</div>
                 @endif
@@ -92,14 +95,14 @@
                 <label class="form-check-label" for="exampleCheck1">I Agree With <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a></label>
             </div>
              
-    <div id="captcha">
-<button class="btn mt-2 mb-2" id="captcha"></button>
+    <!--<div id="captcha">
+ <button class="btn mt-2 mb-2" id="captcha"></button>
     </div>
-    <input type="text" class="form-control" name="captcha" placeholder="Captcha" id="cpatchaTextBox"/>
+   <input type="text" class="form-control" name="captcha" placeholder="Captcha" id="cpatchaTextBox"/> -->
          <div class="row mt-5">
              <div class="offset-3"></div>
-             <div class="col-md-3"><button type="submit" onsubmit="validateCaptcha()" class="btn allbtn btn-block">Submit</button></div>
-             <div class="col-md-3"><button type="submit" class="btn allbtn btn-block">Cancel</button></div>
+             <div class="col-md-3"><button type="submit" onsubmit="validateCaptcha()" class="btn allbtn btn-block text-white card_border ">Submit</button></div>
+             <div class="col-md-3"><button type="submit" class="btn allbtn btn-block text-white card_border ">Cancel</button></div>
          </div> 
 
                 @if ($errors->any())

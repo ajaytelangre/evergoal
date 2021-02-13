@@ -15,106 +15,141 @@
     @include('navbar')
 
   
-    <div class="container" style="">
+    <div class="container mt-3" style=""> <!-- Containter-->
+		<div class="row justify-content-center"> <!-- row-->
         <!-- Bootstrap card 1-->
-        <div class="offset-md-4">
-            @foreach($user as $user1)
-                <div class="card " style="width: 22.5rem;">
-                    <!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
-                    <diV class="card-header bg-danger text-light" style="height:100px ">
-                        {{$user1->name}}
-                        <p class="card-subtitle">{{$user1->id}}</p>
-                    </diV>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <!-- Card Title -->
-                        <!-- <h2 class="card-title">Card title</h2> -->
-                        <div class="card_image">
-                            <img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80">
-                        </div>
-                        
-                        <!-- Card Text -->
-                        <p class="card-text text-center">REFERAL LINK <br>
-                            <a href="#" class="card-text text-center">https://getbootstrap.com/docs/4.0/utilities/colors/</a>
-                        </p>
-                        
-                        <!-- Card Action -->
-                        
-                    </div>
-                </div>
-             @endforeach
-        <!-- Bootstrap card 1 close-->
-
-         <!-- Bootstrap card 2-->
-         <div class="card mt-1" style="width: 22.5rem;">
-            <!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
-            <diV class="card-header bg-warning text-light" style="height:100px">
-               <P class="card-text" style="font-size: 25px;">Your Direct Team</P> 
-                
-            </diV>
-            <!-- Card Body -->
-            <div class="card-body">
-                <!-- Card Title -->
-                <!-- <h2 class="card-title">Card title</h2> -->
-                
-                <!-- Card Text -->
-                <p class="card-text text-center">
-                
-                {{$counts}}
-              
-                 <br>
-                    DIRECTS
-                    <br>
-                    ACTIVE
-                    <br>
-                    {{$active}}
-                    <br>
-                    INACTIVE
-                    <br>
-                    {{$deactive}}
-                </p>
-                
-                <!-- Card Action -->
-                
-            </div>
-        </div>
-<!-- Bootstrap card 2 close-->
-
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xl-6"> <!-- col-4-->
+				@foreach($user as $user1)
+						<div class="card card_height border_color" style="height: 15rem;">
+							<!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
+							<diV class="card-header bg_red text-light card_header text-center" style="height:100px ">
+								{{$user1->name}}
+								<p class="card-subtitle">{{$user1->id}}</p>
+							</diV>
+							<!-- Card Body -->
+							<div class="card-body">
+								<!-- Card Title -->
+								<!-- <h2 class="card-title">Card title</h2> -->
+								<div class="card_image">
+									<img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80">
+								</div>
+								
+								<!-- Card Text -->
+								<p class="card-text text-center">REFERAL LINK <br>
+									<a href="#" class="card-text text-center">https://getbootstrap.com/docs/4.0/utilities/colors/</a>
+								</p>
+								
+								<!-- Card Action -->
+								
+							</div>
+						</div>
+					 @endforeach
+				<!-- Bootstrap card 1 close-->
+			</div> <!-- col-4-->
+		</div><!-- row-->
+		
+		<div class="row ">  <!-- row-->
+			<div class="col-lg-4 col-md-6 col-sm-12 col-xl-4 mt-3"> <!-- col-lg-4-->
+					 <!-- Bootstrap card 2-->
+					 <div class="card mt-1 card_height border_color" >
+						<!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
+						<diV class="card-header bg_red text-light card_header"" style="height:100px">
+						   <P class="card-text text-center" style="font-size: 25px;">Your Direct Team</P> 
+							
+						</diV>
+						<!-- Card Body -->
+						<div class="card-body">
+						
+						  <div class="row">
+							<div class="col-10 border">
+								<p>DIRECTS</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$counts}}</p>
+							</div>
+						  </div>
+						<div class="row" >
+							<div class="col-10 border">
+								<p>ACTIVE</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$active}}</p>
+							</div>
+						</div>
+						 <div class="row" >
+							<div class="col-10 border">
+								<p>INACTIVE</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$deactive}}</p>
+							</div>
+						</div>
+						
+							
+							<!-- Card Text -->
+							
+						
+							
+							<!-- Card Action -->
+							
+						</div>
+					</div>
+			  <!-- Bootstrap card 2 close-->
+		</div> <!-- col-lg-4-->
+ 
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xl-4 mt-3"> <!-- col-lg-4-->
              <!-- Bootstrap card 3-->
-         <div class="card mt-1" style="width: 22.5rem;">
-            <!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
-            <diV class="card-header bg-primary text-light" style="height:100px">
-               <P class="card-text" style="font-size: 25px;">Your Benifits</P> 
-                
-            </diV>
-            <!-- Card Body -->
-            <div class="card-body">
-                <!-- Card Title -->
-                <!-- <h2 class="card-title">Card title</h2> -->
-                
-                <!-- Card Text -->
-                <p class="card-text text-center">{{$daily_benifit}} <br>
-                    DAILY BENIFIT
-                    <br>
-                    {{$level_benifit}}
-                    <br>
-                    LEVEL BENIFIT
-                    <br>
-                    {{$total_benifit}}
-                   <br>
-                   TOTAL BENIFIT
-                </p>
-                
-                <!-- Card Action -->
-                
-            </div>
-        </div>
-<!-- Bootstrap card 3 close-->
+				 <div class="card mt-1 card_height border_color" >
+					<!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
+					<diV class="card-header bg_red text-light card_header"" style="height:100px">
+					   <P class="card-text text-center" style="font-size: 25px;">Your Benifits</P> 
+						
+					</diV>
+					<!-- Card Body -->
+					<div class="card-body">
+						<!-- Card Title -->
+						<!-- <h2 class="card-title">Card title</h2> -->
+						  <div class="row">
+							<div class="col-10 border">
+								<p>DAILY BENIFIT</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$daily_benifit}} </p>
+							</div>
+						  </div>
+						<div class="row" >
+							<div class="col-10 border">
+								<p>LEVEL BENIFIT</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$level_benifit}}</p>
+							</div>
+						</div>
+						 <div class="row" >
+							<div class="col-10 border">
+								<p>TOTAL BENIFIT</p>
+							</div>
+							<div class="col-2 border text_color_red">
+								<p>{{$total_benifit}}</p>
+							</div>
+						</div>
+						
+						
+						<!-- Card Text -->
+			
+						
+						<!-- Card Action -->
+						
+					</div>
+				</div>
+				<!-- Bootstrap card 3 close-->
+		</div> <!-- col-lg-4-->
 
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xl-4 mt-3"> <!-- col-lg-4-->
               <!-- Bootstrap card 2-->
-         <div class="card mt-1" style="width: 22.5rem;">
+         <div class="card mt-1 card_height border_color" >
             <!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
-            <diV class="card-header bg-warning text-light" style="height:100px">
+            <diV class="card-header bg_red text-light card_header"" style="height:100px">
                <P class="card-text text-center" style="font-size: 30px;">Member Statistics</P> 
                 
             </diV>
@@ -128,15 +163,15 @@
                     <div class="col-10 border">
                         <p>Total Id</p>
                     </div>
-                    <div class="col-2 border">
+                    <div class="col-2 border text_color_red">
                         <p>{{$total_count}}</p>
                     </div>
                 </div>
                 <div class="row" >
-                    <div class="col-10 border">
+                    <div class="col-10 border ">
                         <p>Total Direct Id</p>
                     </div>
-                    <div class="col-2 border">
+                    <div class="col-2 border text_color_red">
                         <p>{{$counts}}</p>
                     </div>
                 </div>
@@ -144,10 +179,11 @@
                 
             </div>
         </div>
-<!-- Bootstrap card 2 close-->
-    </div>
+		<!-- Bootstrap card 2 close-->
+		</div> <!-- col-lg-4-->
+    </div> <!-- row-->
 
-    </div>
+    </div> <!-- Containter-->
     @include('footer')
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

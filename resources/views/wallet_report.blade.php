@@ -26,11 +26,14 @@
 <div class="container"> <!-- container -->
         <div class="row justify-content-center">  <!-- row -->
             <div class="col-lg-6 col-md-8 mt-5"> <!-- col-8 -->
-                 <div class="card"> <!-- card -->
-                    <div class="card-body"> <!-- card body-->
-                        <h5 class="card-title text-center">Wallet Details</h5>
+                 <div class="card border_color card_border"> <!-- card -->
+					<div class="card-header bg_red card_header">
+						<h5 class="card-title text-center text-white">Wallet Details</h5>
+					</div>
+                    <div class="card-body "> <!-- card body-->
+                        
                         <div class="table-responsive"> <!-- table-responsive-->
-                            <table class="table table-hover table-bordered text-center">
+                            <table class="table table-hover  text-center text-info">
                             <thead>
                                     <tr>
                                         <th scope="col">TrID</th>

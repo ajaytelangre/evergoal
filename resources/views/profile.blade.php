@@ -20,24 +20,34 @@
 <!-- Main Content -->
 
 <div class="container mt-3">
-    <div class="row">
-        <div class="offset-2"></div>
-        <div class="col-md-8 mt-3">
-        <h2 class="text-center">My Profile</h2></br>
-               
-                 <div class="card mb-5 p-4" style="width:25em; margin-left:auto;margin-right:auto;">
+    <div class="row justify-content-center">
+       
+        <div class="col-md-4 mt-3">
+        <h2 class="text-center text-white">My Profile</h2></br>
+           @if($errors->has("name"))
+              <label class="text-danger">*{{$errors->first('name')}}</label>
+            @endif  
+            @if($errors->has("mobile"))
+              <label class="text-danger">*{{$errors->first('mobile')}}</label>
+            @endif  
+
+            @if(Session::has("success"))
+              <label class="text-success">*{{Session::get('success')}}</label>
+            @endif  
+            
+                 <div class="card mb-5 p-4 card_border border_color" style="">
                  
                     @foreach($data as $user_data)
-                    <img  class="img-fluid" src="{{ asset('/storage/user/' . $user_data->pimg) }}"  alt="" style="height:200px;width:200px; margin-left:auto;margin-right:auto;display:block;">
+                    <img  class="img-fluid circle_img border_color" src="{{ asset('/storage/user/' . $user_data->pimg) }}"  alt="" style="height:200px;width:200px; margin-left:auto;margin-right:auto;display:block;">
                     <h3 class="text-center"></h3>
                     <div class="card-body text-center">
-                        <p> <strong>SponserId:{{$user_data->sponserid}}</strong></p>
+                        <h5 class="text-info"> Sponser Id : {{$user_data->sponserid}}</h5>
                         <!-- <p><strong>Name:</strong>Shubh</p> -->
-                         <p> <strong>Mobile No :{{$user_data->mobile}}</strong></p>
+                         <h5 class="text-info"> Mobile No : {{$user_data->mobile}}</h5>
                     @endforeach 
                         
 
-                <button type="button" class="btn allbtn" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Update</button>
+                <button type="button" class="btn allbtn card_border button_red btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Update</button>
                     </div>
                     </div>
         </div>
@@ -62,19 +72,17 @@
          @foreach($data as $user_data)
         <input type="hidden" class="form-control" id="recipient-id" name="id" value="{{$user_data->id}}">
 
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Sponsor Id:</label>
-            <input type="text" class="form-control" id="recipient-id" name="sponserid" value="{{$user_data->sponserid}}">
-          </div>
+       
           <div class="form-group">
             <label for="message-text" class="col-form-label">Name:</label>
             <input type="text" class="form-control"  name="name" id="recipient-name" value="{{$user_data->name}}">
+          
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="message-text" class="col-form-label">Mobile No:</label>
-            <input type="text" class="form-control" id="recipient-no" name="mobileno"  value="{{$user_data->mobile}}">
-          </div>
+            <input type="text" class="form-control" id="recipient-no" name="mobile"  value="{{$user_data->mobile}}">
+          </div> -->
           @endforeach()
        
 
