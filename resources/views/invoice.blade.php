@@ -217,7 +217,7 @@
                <P>This is computer generated invoice hence no stamp required</P>
             </div>
             <div class="col-6 border">
-                <P>For Osmose Technology Private Limited</P>
+                <P>For Evergoal India Private Limited</P>
              </div>
         </div>
         
