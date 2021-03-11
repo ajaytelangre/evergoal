@@ -11,7 +11,7 @@
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-     <link href="css/style.css" rel="stylesheet">
+     <link href="{{asset('css/style.css')}}" rel="stylesheet">
       <style> 
   
   </style> 
