@@ -100,6 +100,7 @@ class Registrationcontroller extends Controller
                         'user_type'=>'user',
                         'created_at'=>Carbon::now(),
                     ]);
+                    
                     Session::flash('message','Data uploaded');
                     return Redirect::back()->withErrors($validatedData);
                 }

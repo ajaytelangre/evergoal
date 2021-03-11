@@ -28,7 +28,11 @@
                        <h3>Evergoal Wallet</h3>
                        <h5>Available Balance:</h5>
                        
-                       <h5> ₹ {{$amount->total_amount}}</h5>
+                       <h5> @if($amount) ₹ {{$amount->total_amount}}
+                            @else  ₹ 0
+                        @endif
+                       
+                       </h5>
                     </div>
                 </div>
             <!-- card close -->
