@@ -65,10 +65,12 @@
                                         Available to withdraw
                                     </div>
                                     <div class="col-3">
+                                        @if($amount)
                                         @if($amount->total_amount>=500 and $direct_user>=2)
                                          ₹ {{$amount->total_amount}}
                                         @else
                                          ₹ 0
+                                        @endif
                                         @endif
                                     </div>
                                     <div class="col-12 text-muted">
@@ -83,7 +85,9 @@
                                        Total Amount
                                     </div>
                                     <div class="col-3">
-                                         ₹ {{$amount->total_amount}}
+                                         ₹  @if($amount) {{$amount->total_amount}}
+                                         @else 0
+                                         @endif
                                     </div>
                                     <div class="col-12 text-muted">
                                      This is the total amount in your wallet
