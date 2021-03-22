@@ -49,7 +49,7 @@
                                         <div class="form-group row">
                                             <label for="account_no" class="col-md-4 col-form-label text-md-right">Account No:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="account_no" class="form-control card_border" name="account_no">
+                                                <input type="text" id="account_no" class="form-control card_border" name="account_no" value="{{old('account_no')}}">
                                                 @if($errors->has('account_no'))
                                                             <div class="error alert alert-danger">{{$errors->first('account_no')}} </div>
                                                  @endif
@@ -77,7 +77,7 @@
                                         <div class="form-group row">
                                             <label for="branch_name" class="col-md-4 col-form-label text-md-right">Branch Name:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="branch_name" name="branch_name" class="form-control card_border">
+                                                <input type="text" id="branch_name" name="branch_name" class="form-control card_border" value="{{old('branch_name')}}">
                                                 @if($errors->has('branch_name'))
                                                             <div class="error alert alert-danger">{{$errors->first('branch_name')}} </div>
                                                  @endif
@@ -87,7 +87,7 @@
                                         <div class="form-group row">
                                             <label for="present_address" class="col-md-4 col-form-label text-md-right">IFSC CODE:</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="ifsc" name="ifsc" class="form-control card_border">
+                                                <input type="text" id="ifsc" name="ifsc" class="form-control card_border" value="{{old('ifsc')}}">
                                                 @if($errors->has('ifsc'))
                                                             <div class="error alert alert-danger">{{$errors->first('ifsc')}} </div>
                                                  @endif

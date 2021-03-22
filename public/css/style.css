@@ -250,13 +250,13 @@ color:white;
 
 .img_border{
     
-    border: 3px solid #db3e1f;
+    /* border: 3px solid #db3e1f; */
     border-radius: 20px;
     height: 256px;
 }
 
 .btn_border{ 
-    border: 3px solid #db3e1f;
+    /* border: 3px solid #db3e1f; */
     color: #db3e1f !important;
     border-radius: 15px;
     font-weight: bold;
@@ -367,8 +367,8 @@ a:hover {
 }
 
 .border_color{
-    border-color: #db3e1f;
-    border-width: initial;
+    /* border-color: #db3e1f;
+    border-width: initial; */
 }
  
 .circle_img{
@@ -381,7 +381,7 @@ a:hover {
 }
 
 .bg_red{
-    background-color: #db3e1f;
+    background-color: #0e4261;
 }
 
 .button_red{

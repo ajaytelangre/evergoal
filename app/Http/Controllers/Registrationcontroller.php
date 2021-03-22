@@ -429,6 +429,7 @@ class Registrationcontroller extends Controller
 
         if($validatedData->fails())
         {
+            $request->flash();
             return Redirect::back()->withErrors($validatedData);
         }
         else{
