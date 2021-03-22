@@ -32,31 +32,31 @@
 
       <div class="row mt-5 indexsection" style="margin-bottom:20px;" >
 
-        <div class="col-md-3 mt-3">
-        <div class="text-center indeximg">
-         <img class=" img-fluid img_border" src="img/newregist.png" alt=""></br>
-        
-        <a type="button" class="btn  mt-3 btn-lg btn_border btn-block" href="{{url('/registration')}}">New Registeration</a>
-         </div>
+        <div class="col-md-3 col-3 mt-3">
+          <div class="text-center indeximg text-wrap">
+          <img class=" img-fluid img_border" src="img/newregist.png" alt=""></br>
+          
+          <a type="button" class="btn  mt-3 btn-lg btn_border btn-block " href="{{url('/registration')}}">New Registeration</a>
+          </div>
         </div>
 
 
 
-        <div class="col-md-3 mt-3">
+        <div class="col-md-3 col-3 mt-3">
         <div class="text-center indeximg">
           <img class="img-fluid img_border" src="img/newtopupwallet.png" alt=""></br>
             <a type="button" class="btn  mt-3 btn-lg btn_border btn-block" href="{{url('/topup')}}">Get Topup</a>
         </div>
          </div>
  
-        <div class="col-md-3 mt-3">
+        <div class="col-md-3 col-3 mt-3">
           <div class="text-center indeximg">
               <img class="img-fluid img_border" src="img/android1.png" alt=""></br>
                <a href="{{url('/portal')}}" type="button" class="btn  mt-3 btn-lg btn_border btn-block">KUBER APP</a>
           </div>
        </div>
 
-       <div class="col-md-3 mt-3">
+       <div class="col-md-3 col-3 mt-3">
           <div class="text-center indeximg">
               <img class="img-fluid img_border" src="img/newpolicytext.png" alt=""></br>
                <a href="{{url('/portal')}}" type="button" class="btn  mt-3 btn-lg btn_border btn-block">Policy</a>
