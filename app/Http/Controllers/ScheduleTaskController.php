@@ -350,8 +350,10 @@ class ScheduleTaskController extends Controller
             {
                 
                 $user = User::find($data->id);
-                $user->status = 'deactive';
-                $user->save();
+                if($user->id > 60){
+                    $user->status = 'deactive';
+                    $user->save();
+                }
             }  
             
         }
