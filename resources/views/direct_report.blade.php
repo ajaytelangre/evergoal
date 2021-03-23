@@ -23,7 +23,7 @@
 					 
                     </div>
 					  <div class="card_image2">
-								<img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle team_profile_logo" alt="Cinque Terre" >
+								<img src="{{ asset('/storage/' . session()->get('avtar')) }}" class="rounded-circle team_profile_logo" alt="Cinque Terre" >
 							</div>
                     <div class="card-body">
                      

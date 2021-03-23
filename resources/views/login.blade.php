@@ -43,18 +43,18 @@
          
         </div> <!-- col-md-7 -->
 		
-		<div class="col-md-5 col-lg-5 col-12  login" >  <!-- ml-o -->
+		<div class="col-md-5 col-lg-5 col-12 login_back_img login" >  <!-- ml-o -->
               <div class=" login_margin" > <!-- login_margin-->
 					 <div class=" m-3 ">  <!-- m-3-->
 							<div class=" row justify-content-center welcome"> 
-								<div class="text-center ">
+								<div class="text-center logo_background">
 									<img  src="{{asset('/img/evergoal.png')}}" class=" logo_height"  alt=""></br>
 									
 								</div>
 							</div>
 							<div class=" row justify-content-center"> 
 								<div class="text-center ">
-									<h2 class="index_header text_color_red">USER LOGIN</h2>
+									<h2 class="index_header heading_color">USER LOGIN</h2>
 									
 								</div>
 							</div>

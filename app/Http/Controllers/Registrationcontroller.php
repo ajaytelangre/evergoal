@@ -80,12 +80,13 @@ class Registrationcontroller extends Controller
                 {
                     if($request->hasFile('pimg'))
                     {
-                        $pimg= $request->pimg->getClientOriginalName();
+                        $pimg=$request->file('pimg')->store('user','public');
+                       // $pimg= $request->pimg->getClientOriginalName();
                         // if(auth()->user()->pimg)
                         // {
                         //     Storage::delete('public/user/'.auth()->user()->pimg);
                         // }
-                        $request->pimg->storeAs('user',$pimg,'public');
+                       // $request->pimg->storeAs('user',$pimg,'public');
                         auth()->user()->update(['pimg'=>$pimg]);
                     }
                     
