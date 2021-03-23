@@ -20,7 +20,7 @@
                   
                     <div class="col-4">
                         <li class="nav-item active">
-                            <img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="50" height="50">
+                            <img src="{{ asset('/storage/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="50" height="50">
                         </li>
                     </div>
                     <div class="col-8 mt-2  ">
@@ -66,13 +66,13 @@
                     <a class="nav-link text-white tabs_color text-center" href="{{url('/showprofile')}}">Profile</a>
                 </li>
                 <!---------- Document Dropdown    ------------>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white tabs_color text-center " id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true"
                       aria-expanded="false">Document</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink2">
                       <a class="dropdown-item" href="{{url('/invoice')}}">Invoice</a>
                     </div>
-                  </li>
+                  </li> -->
                 <!---------- Document Dropdown close    ------------>
 
                 <li class="nav-item">
@@ -88,27 +88,22 @@
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink3">
                       <a class="dropdown-item" href="{{url('/mywallet')}}">My Wallet</a>
                       <a class="dropdown-item" href="{{url('/wallet_report')}}">Wallet Report</a>
+                      <a class="dropdown-item" href="{{url('/withdraw')}}">Bank Withdrawl</a>
+                      <a class="dropdown-item" href="{{url('/withdraw_details')}}">Bank Withdrawl details</a>
                     </div>
                   </li>
                 <!---------- Wallet Dropdown close ------------>
 
                    <!---------- Benifits Dropdown  ------------>
-                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white tabs_color text-center" id="navbarDropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false">Benifits</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink4">
-                      <a class="dropdown-item" href="{{url('/withdraw')}}">Bank Withdrawl</a>
-                      <a class="dropdown-item" href="{{url('/withdraw_details')}}">Bank Withdrawl details</a>
-                    </div>
-                  </li>
+                 
                 <!---------- Benifits Dropdown close ------------>
 
                     <!---------- Support Dropdown  ------------>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white tabs_color text-center " id="navbarDropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true"
-                          aria-expanded="false">Support</a>
+                          aria-expanded="false">Contact Us</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink5">
-                          <a class="dropdown-item" href="#">Support Team</a>
+                          <a class="dropdown-item" href="{{url('/contact')}}">Contact Us</a>
                          
                         </div>
                       </li>
@@ -129,7 +124,7 @@
                 <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white tabs_color text-center " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <!-- {{ Auth::user()->name }} -->
-                                    Profile
+                                    Logout
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -225,6 +225,15 @@ color:white;
     .heading_color{
         color: #f5f1f0 ;
     }
+
+    .card_img_h{
+        height: 93px !important;
+    }
+
+    .card_button{
+        font-size: 2.5vw;
+        padding: 3px;
+    }
     .tabs_color{
        
      

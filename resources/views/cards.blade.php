@@ -20,24 +20,24 @@
         <!-- Bootstrap card 1-->
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xl-6"> <!-- col-4-->
 				@foreach($user as $user1)
-						<div class="card card_height border_color" style="height: 15rem;">
+						<div class="card card_height border_color" style="height: 10rem;">
 							<!-- <img class="card-img-top" src="http://propeller.in/assets/images/profile-pic.png" alt="Card image cap"> -->
 							<diV class="card-header bg_red text-light card_header text-center" style="height:100px ">
 								{{$user1->name}}
 								<p class="card-subtitle">{{$user1->id}}</p>
 							</diV>
 							<!-- Card Body -->
-							<div class="card-body">
+							<div class="card-body bg_red card_footer">
 								<!-- Card Title -->
 								<!-- <h2 class="card-title">Card title</h2> -->
 								<div class="card_image">
-									<img src="{{ asset('/storage/user/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80">
+									<img src="{{ asset('/storage/' . session()->get('avtar')) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80">
 								</div>
 								
 								<!-- Card Text -->
-								<p class="card-text text-center">REFERAL LINK <br>
+								<!-- <p class="card-text text-center">REFERAL LINK <br>
 									<a href="#" class="card-text text-center">https://getbootstrap.com/docs/4.0/utilities/colors/</a>
-								</p>
+								</p> -->
 								
 								<!-- Card Action -->
 								

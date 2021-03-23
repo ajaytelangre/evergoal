@@ -117,11 +117,7 @@ Route::POST('/payment_initiate_request',[UserController::class,'Initiate']);
 
 Route::POST('/payment_success',[UserController::class,'payment_success']);
 
-Route::get('/child_status',[ScheduleTaskController::class,'child_status']);
 
-Route::get('/total_amount',[ScheduleTaskController::class,'total_amount']);
-
-Route::get('/update_amount_id',[ScheduleTaskController::class,'update_amount_id']);
 
 Route::get('/my_direct_report',[Registrationcontroller::class,'my_direct_report']);
 
@@ -141,7 +137,7 @@ Route::POST('/Profile-updated',[Registrationcontroller::class,'insertUpdate'])->
 
 //Sub Registration Page
 
-Route::GET('/subprofile',[Subregistcontroller::class,'viewSubProfile']);
+Route::GET('/subprofile',[Subregistcontroller::class,'viewSubProfile'])->middleware('auth');
 Route::POST('/savesubproile',[Subregistcontroller::class,'createSubProfile'])->name('subprofile.created');
 
 Auth::routes();
@@ -151,3 +147,5 @@ Route::get('/invoices',[InvoiceController::class,'invoice_report']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::view('/contact','contact');
+Route::view('/term','termsandcondition');
